@@ -9,6 +9,12 @@ export default {
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 
+export const LargeBtn = () => {
+  return (
+    <Button type='button' label='버튼' padding='19px 0' bgColor='#21BF48' />
+  );
+};
+
 export const Large = Template.bind({});
 Large.args = {
   type: 'button',
@@ -185,8 +191,8 @@ Small_White_Hover.args = {
   bgColor: '#FFFFFF',
 };
 
-export const Tap_Active = Template.bind({});
-Tap_Active.args = {
+export const Nav_Tab_Active = Template.bind({});
+Nav_Tab_Active.args = {
   type: 'button',
   label: '버튼',
   padding: '19px 0 12px',
@@ -198,8 +204,8 @@ Tap_Active.args = {
   bgColor: '#FFFFFF',
 };
 
-export const Tap_Disabled = Template.bind({});
-Tap_Disabled.args = {
+export const Nav_Tab_Disabled = Template.bind({});
+Nav_Tab_Disabled.args = {
   type: 'button',
   label: '버튼',
   padding: '19px 0 12px',
@@ -211,8 +217,8 @@ Tap_Disabled.args = {
   bgColor: '#FFFFFF',
 };
 
-export const Teb_Menu_Off = Template.bind({});
-Teb_Menu_Off.args = {
+export const Tab_Menu_Off = Template.bind({});
+Tab_Menu_Off.args = {
   type: 'button',
   label: '판매중인 상품',
   padding: '15px 0',
@@ -225,8 +231,8 @@ Teb_Menu_Off.args = {
   className: 'btn_tap_menu',
 };
 
-export const Teb_Menu_Hover = Template.bind({});
-Teb_Menu_Hover.args = {
+export const Tab_Menu_Hover = Template.bind({});
+Tab_Menu_Hover.args = {
   type: 'button',
   label: '판매중인 상품',
   padding: '15px 0',
@@ -239,8 +245,9 @@ Teb_Menu_Hover.args = {
   className: 'btn_tap_menu',
 };
 
-export const Teb_Menu_On = Template.bind({});
-Teb_Menu_On.args = {
+export const Tab_Menu_On = Template.bind({});
+Tab_Menu_On.args = {
+  type: 'button',
   label: '판매중인 상품',
   padding: '15px 0',
   borderRadius: '5px',

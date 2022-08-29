@@ -3,15 +3,15 @@ import styled from 'styled-components';
 export interface ButtonProps {
   type: 'button' | 'submit';
   label?: string;
-  padding: string;
+  padding?: string;
   border?: string;
   borderBottom?: string;
   borderRadius?: string;
-  fontSize: string;
-  fontWeight: string;
-  lineHeight: string;
-  color: string;
-  bgColor: string;
+  fontSize?: string;
+  fontWeight?: string;
+  lineHeight?: string;
+  color?: string;
+  bgColor?: string;
   imgSrc?: any;
   className?: string;
 }
@@ -47,36 +47,9 @@ export const StyledButton = styled.button<ButtonProps>`
   }
 `;
 
-export const Button = ({
-  type,
-  label,
-  padding,
-  border,
-  borderBottom,
-  borderRadius,
-  fontSize,
-  fontWeight,
-  lineHeight,
-  color,
-  bgColor,
-  imgSrc,
-  className,
-}: ButtonProps) => {
+export const Button = ({ type, label, ...props }: ButtonProps) => {
   return (
-    <StyledButton
-      type={type}
-      padding={padding}
-      border={border}
-      borderBottom={borderBottom}
-      borderRadius={borderRadius}
-      fontSize={fontSize}
-      fontWeight={fontWeight}
-      lineHeight={lineHeight}
-      color={color}
-      bgColor={bgColor}
-      imgSrc={imgSrc}
-      className={className}
-    >
+    <StyledButton type={type} {...props}>
       {label}
     </StyledButton>
   );
