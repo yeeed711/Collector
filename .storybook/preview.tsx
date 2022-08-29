@@ -1,9 +1,10 @@
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { mainTheme } from '../src/theme';
 import { GlobalStyle } from '../src/index';
 
 export const decorators = [
-  (Stroy) => (
+  Stroy => (
     <>
       <ThemeProvider theme={mainTheme} />
       <GlobalStyle />
