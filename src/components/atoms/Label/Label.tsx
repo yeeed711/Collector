@@ -1,9 +1,14 @@
-import React from 'react';
 import styled from 'styled-components';
 
+const Label = ({ htmlFor, children, className }: LabelProps) => {
+  return (
+    <StyledLabel htmlFor={htmlFor} children={children} className={className} />
+  );
+};
 export interface LabelProps {
   htmlFor: string;
   children: string;
+  className?: string;
 }
 
 const StyledLabel = styled.label<LabelProps>`
@@ -13,6 +18,4 @@ const StyledLabel = styled.label<LabelProps>`
   color: #767676;
 `;
 
-export const Label = ({ htmlFor, children }: LabelProps) => {
-  return <StyledLabel htmlFor={htmlFor} children={children} />;
-};
+export default Label;
