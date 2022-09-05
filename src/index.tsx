@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import reset from 'styled-reset';
 import App from './App';
-import { mainTheme } from './theme';
+import theme from './theme';
+import './font/font.css';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
     font-size: 10px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   }
   * {
     box-sizing: border-box;
@@ -39,12 +41,13 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={mainTheme} />
-    <GlobalStyle />
-    <App />
-  </React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
 );
