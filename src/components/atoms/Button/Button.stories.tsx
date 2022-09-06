@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button } from './Button';
+import Button from './Button';
 import plusIcon from '../../../assets/icon-plus.svg';
+import theme from '../../../theme';
 
 export default {
   title: 'Atoms/Button',
@@ -8,12 +9,6 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
-
-export const LargeBtn = () => {
-  return (
-    <Button type='button' label='버튼' padding='19px 0' bgColor='#21BF48' />
-  );
-};
 
 export const Large = Template.bind({});
 Large.args = {
@@ -25,7 +20,7 @@ Large.args = {
   fontWeight: '700',
   lineHeight: '30px',
   color: '#FFFFFF',
-  bgColor: '#21BF48',
+  bgColor: theme.color.primary,
 };
 
 export const LargeDisabled = Template.bind({});
@@ -51,7 +46,7 @@ Medium.args = {
   fontWeight: '700',
   lineHeight: '22px',
   color: '#FFFFFF',
-  bgColor: '#21BF48',
+  bgColor: theme.color.primary,
 };
 
 export const MediumDisabled = Template.bind({});
@@ -104,7 +99,7 @@ MS_Icon_Product.args = {
   fontWeight: '500',
   lineHeight: '23px',
   color: '#FFFFFF',
-  bgColor: '#21BF48',
+  bgColor: theme.color.primary,
   imgSrc: `${plusIcon}`,
   className: 'btn_product-upload',
 };
@@ -119,7 +114,7 @@ MS_16p_Product.args = {
   fontWeight: '500',
   lineHeight: '23px',
   color: '#FFFFFF',
-  bgColor: '#21BF48',
+  bgColor: theme.color.primary,
 };
 
 export const MS_16p_Product_White = Template.bind({});
@@ -160,7 +155,7 @@ Small.args = {
   fontWeight: '500',
   lineHeight: '20px',
   color: '#FFFFFF',
-  bgColor: '#21BF48',
+  bgColor: theme.color.primary,
 };
 
 export const Small_White = Template.bind({});

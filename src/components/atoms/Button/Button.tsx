@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+const Button = ({ type, label, bgColor, ...props }: ButtonProps) => {
+  return (
+    <StyledButton type={type} bgColor={bgColor} {...props}>
+      {label}
+    </StyledButton>
+  );
+};
+
 export interface ButtonProps {
   type: 'button' | 'submit';
   label?: string;
@@ -11,8 +19,8 @@ export interface ButtonProps {
   fontWeight?: string;
   lineHeight?: string;
   color?: string;
-  bgColor?: string;
-  imgSrc?: any;
+  bgColor?: any;
+  imgSrc?: string;
   className?: string;
 }
 
@@ -42,15 +50,9 @@ export const StyledButton = styled.button<ButtonProps>`
       border-radius: 50%;
       font-size: 12px;
       color: #ffffff;
-      background-color: #eb5757;
+      background-color: ${props => props.theme.color.error};
     }
   }
 `;
 
-export const Button = ({ type, label, ...props }: ButtonProps) => {
-  return (
-    <StyledButton type={type} {...props}>
-      {label}
-    </StyledButton>
-  );
-};
+export default Button;
