@@ -1,13 +1,24 @@
 import React, { ReactElement } from 'react';
-import Button from '../../atoms/Button/Button';
+import { Button } from '../../atoms/Button/Button';
 import Input from '../../atoms/Input/Input';
 import Label from '../../atoms/Label/Label';
+
+interface Props  {
+  theme:{
+    color:{
+      primary:string;
+      disabled:string;
+      error:string;
+    }
+  }
+}
 
 const LoginForm = () => {
   return (
     <>
       <Label htmlFor='userId' children='아이디' className='ir' />
       <Input
+        inputName='123'
         id='userId'
         type='text'
         placeholder='아이디'
@@ -16,6 +27,7 @@ const LoginForm = () => {
       />
       <Label htmlFor='password' children='비밀번호' className='ir' />
       <Input
+        inputName='123'
         id='password'
         type='text'
         placeholder='비밀번호'
@@ -31,7 +43,7 @@ const LoginForm = () => {
         fontWeight='700'
         lineHeight='22px'
         color='#FFFFFF'
-        bgColor={props => props.theme.color.primary}
+        bgColor={(props:Props) => props.theme.color.primary}
       />
     </>
   );

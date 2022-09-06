@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export interface InputProps {
+  id?:string;
   inputName: string;
   type: 'text' | 'checkbox';
   placeholder?: string;
@@ -8,6 +9,7 @@ export interface InputProps {
   borderRadius?: string;
   maxLength?: number;
   children?: string;
+  borderBottom?:string;
 }
 
 const StyledInput = styled.input<InputProps>`
