@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ColorsTypes } from '../../../theme';
 
 const Button = ({ type, label, bgColor, ...props }: ButtonProps) => {
   return (
@@ -19,10 +20,20 @@ export interface ButtonProps {
   fontWeight?: string;
   lineHeight?: string;
   color?: string;
-  bgColor?: any;
+  bgColor?: string | Fn;
   imgSrc?: string;
   className?: string;
 }
+
+interface Props {
+  theme: {
+    color: ColorsTypes;
+  };
+}
+
+type Fn = {
+  (props: Props): string;
+};
 
 export const StyledButton = styled.button<ButtonProps>`
   width: 100%;

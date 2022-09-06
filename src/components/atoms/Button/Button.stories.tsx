@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from './Button';
 import plusIcon from '../../../assets/icon-plus.svg';
-import theme from '../../../theme';
 
 export default {
   title: 'Atoms/Button',
@@ -20,7 +19,7 @@ Large.args = {
   fontWeight: '700',
   lineHeight: '30px',
   color: '#FFFFFF',
-  bgColor: theme.color.primary,
+  bgColor: props => props.theme.color.primary,
 };
 
 export const LargeDisabled = Template.bind({});
@@ -33,7 +32,7 @@ LargeDisabled.args = {
   fontWeight: '700',
   lineHeight: '30px',
   color: '#FFFFFF',
-  bgColor: '#C4C4C4',
+  bgColor: props => props.theme.color.disabled,
 };
 
 export const Medium = Template.bind({});
@@ -46,7 +45,7 @@ Medium.args = {
   fontWeight: '700',
   lineHeight: '22px',
   color: '#FFFFFF',
-  bgColor: theme.color.primary,
+  bgColor: props => props.theme.color.primary,
 };
 
 export const MediumDisabled = Template.bind({});
@@ -59,7 +58,7 @@ MediumDisabled.args = {
   fontWeight: '700',
   lineHeight: '22px',
   color: '#FFFFFF',
-  bgColor: '#C4C4C4',
+  bgColor: props => props.theme.color.disabled,
 };
 
 export const MediumDark = Template.bind({});
@@ -99,8 +98,8 @@ MS_Icon_Product.args = {
   fontWeight: '500',
   lineHeight: '23px',
   color: '#FFFFFF',
-  bgColor: theme.color.primary,
-  imgSrc: `${plusIcon}`,
+  bgColor: props => props.theme.color.primary,
+  imgSrc: plusIcon,
   className: 'btn_product-upload',
 };
 
@@ -114,7 +113,7 @@ MS_16p_Product.args = {
   fontWeight: '500',
   lineHeight: '23px',
   color: '#FFFFFF',
-  bgColor: theme.color.primary,
+  bgColor: props => props.theme.color.primary,
 };
 
 export const MS_16p_Product_White = Template.bind({});
@@ -155,7 +154,7 @@ Small.args = {
   fontWeight: '500',
   lineHeight: '20px',
   color: '#FFFFFF',
-  bgColor: theme.color.primary,
+  bgColor: props => props.theme.color.primary,
 };
 
 export const Small_White = Template.bind({});
@@ -250,6 +249,6 @@ Tab_Menu_On.args = {
   fontWeight: '500',
   lineHeight: '20px',
   color: '#FFFFFF',
-  bgColor: '#21BF48',
+  bgColor: props => props.theme.color.primary,
   className: 'btn_tap_menu',
 };
