@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../atoms/Logo/Logo';
 import LoginForm from '../../organisms/LoginForm/LoginForm';
-import LoginTemplate from '../../templates/LoginLayout/LoginTemplate';
+import LoginTemplate from '../../templates/LoginTemplate/LoginTemplate';
 
 const LoginPage = () => {
   return (
