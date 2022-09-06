@@ -1,5 +1,17 @@
 import styled from 'styled-components';
+interface Props  {
+  theme:{
+    color:{
+      primary:string;
+      disabled:string;
+      error:string;
+    }
+  }
+}
 
+type bgFn = {
+  (props:Props):string;
+}
 export interface ButtonProps {
   type: 'button' | 'submit';
   label?: string;
@@ -11,7 +23,7 @@ export interface ButtonProps {
   fontWeight?: string;
   lineHeight?: string;
   color?: string;
-  bgColor?: string;
+  bgColor?: string | bgFn;
   imgSrc?: any;
   className?: string;
 }
