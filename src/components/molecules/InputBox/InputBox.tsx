@@ -1,45 +1,42 @@
 import styled from 'styled-components';
 import Input from '../../atoms/Input/Input';
 import Label from '../../atoms/Label/Label';
-
-const InputBox = ({
-  htmlFor,
-  children,
-  type,
-  id,
-  message,
-  className,
-  ...props
-}: Props) => {
-  return (
-    <>
-      <Label htmlFor={htmlFor} children={children} {...props} />
-      <Input id={id} type={type} {...props} />
-      <Message className={className}>{message}</Message>
-    </>
-  );
-};
-
 interface Props {
   htmlFor: string;
   children: string;
   id: string;
   type: 'text' | 'checkbox';
   placeholder?: string;
-  border?: string;
-  borderRadius?: string;
   maxLength?: number;
   margin?: string;
-  message?: string;
   className?: string;
+  message?: string;
 }
 
+const InputBox = ({
+  htmlFor,
+  children,
+  type,
+  id,
+  className,
+  message,
+  ...props
+}: Props) => {
+  return (
+    <>
+      <Label htmlFor={htmlFor} children={children} className={className} />
+      <Input id={id} type={type} className={className} {...props} />
+      <Message className={className}>{message}</Message>
+    </>
+  );
+};
+
 const Message = styled.p`
+  margin: 10px 0;
   color: ${props => props.theme.color.primary};
   font-size: 16px;
-  &.error {
+  &.errorMeg {
     color: ${props => props.theme.color.error};
   }
 `;
-
 export default InputBox;
