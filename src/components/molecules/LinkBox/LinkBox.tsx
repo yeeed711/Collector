@@ -7,7 +7,9 @@ const Container = styled.ul`
   display: flex;
   font-size: 16px;
   line-height: 20px;
+  justify-content: center;
   li {
+    cursor: pointer;
     & + li::before {
       content: '|';
       margin: 0 10px;
