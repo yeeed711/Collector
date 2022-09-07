@@ -1,33 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
+export interface InputProps {
+  id?: string;
+  type: 'text' | 'password' | 'checkbox' | 'search';
+  placeholder?: string;
+  borderBottom?: string;
+  maxLength?: number;
+  children?: string;
+  margin?: string;
+  className?: string;
+  onInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
 const Input = ({ id, type, ...props }: InputProps) => {
   return <StyledInput id={id} type={type} {...props}></StyledInput>;
 };
-export interface InputProps {
-  id?: string;
-  type: 'text' | 'checkbox' | 'search';
-  placeholder?: string;
-  border?: string;
-  borderBottom?: string;
-  borderRadius?: string;
-  maxLength?: number;
-  children?: string;
-  margin?: string;
-  padding?: string;
-  onInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 const StyledInput = styled.input<InputProps>`
   width: 100%;
-  padding: ${props => props.padding};
-  border: ${props => props.border};
+  padding: 17px 0 17px 16px;
+  border: 1px solid #c4c4c4;
   border-bottom: ${props => props.borderBottom};
-  border-radius: ${props => props.borderRadius};
+  border-radius: 5px;
   margin: ${props => props.margin};
-  font-size: 20px;
+  font-size: 16px;
+  color: #21bf48;
   &:focus {
     outline: none;
+    color: #21bf48;
+    border-color: #21bf48;
+    &::placeholder {
+      color: #21bf48;
+    }
   }
   &::placeholder {
     font-size: 16px;
@@ -37,6 +41,25 @@ const StyledInput = styled.input<InputProps>`
     border: 2px solid #21bf48;
     border-radius: 50px;
     padding: 13px 0 13px 22px;
+  }
+  &.error {
+    border-color: ${props => props.theme.color.error};
+    color: ${props => props.theme.color.error};
+    &::placeholder {
+      color: ${props => props.theme.color.error};
+    }
+  }
+  &.square {
+    padding: 17px 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+    &:focus {
+      border-color: #21bf48;
+      &::placeholder {
+        color: #21bf48;
+      }
+    }
   }
 `;
 
