@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Button from '../../atoms/Button/Button';
 import InputBox from '../InputBox/InputBox';
-
 interface Props {
   htmlFor: string;
   children: string;
@@ -13,20 +12,18 @@ interface Props {
 }
 
 const Container = styled.div`
-  display: flex;
-  button {
-    margin-left: 12px;
-    align-self: flex-end;
-    flex-basis: 122px;
+  display: grid;
+  gap: 6px 10px;
+  grid-template-columns: 3fr 1fr;
+  input {
+    grid-column: 1/2;
   }
-`;
-
-const Message = styled.p`
-  margin-top: 10px;
-  color: ${props => props.theme.color.primary};
-  font-size: 16px;
-  &.error {
-    color: ${props => props.theme.color.error};
+  button {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  p {
+    grid-column: 1/2;
   }
 `;
 
@@ -34,7 +31,6 @@ const InputBtn = ({
   htmlFor,
   children,
   id,
-  border,
   className,
   message,
   label,
@@ -43,16 +39,13 @@ const InputBtn = ({
     <>
       <Container>
         <InputBox
-          htmlFor={htmlFor}
-          children={children}
           id={id}
           type='text'
-          border={border}
-          borderRadius='5px'
-          margin='10px 0 0 0'
-          padding='17px 0 17px 16px'
+          htmlFor={htmlFor}
+          children={children}
+          className={className}
+          message={message}
         />
-
         <Button
           type='button'
           label={label}
@@ -65,7 +58,6 @@ const InputBtn = ({
           bgColor={props => props.theme.color.primary}
         />
       </Container>
-      <Message className={className}>{message}</Message>
     </>
   );
 };
