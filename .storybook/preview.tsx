@@ -4,10 +4,10 @@ import theme from '../src/theme';
 import { GlobalStyle } from '../src/index';
 
 export const decorators = [
-  Stroy => (
+  Story => (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Stroy />
+      <Story />
     </ThemeProvider>
   ),
 ];
