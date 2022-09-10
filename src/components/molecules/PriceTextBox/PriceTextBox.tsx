@@ -10,7 +10,7 @@ interface Props {
 }
 
 const PriceText = styled.div`
-  text-align: center;
+  /* text-align: center; */
   p {
     font-size: 16px;
     margin-bottom: 12px;
