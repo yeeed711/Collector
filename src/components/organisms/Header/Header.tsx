@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <HeaderStyle>
       <div>
-        <Logo width='124px' alt='호두샵 서브 로고' />
+        <Logo width='124px' height='38px' alt='호두샵 서브 로고' />
         <Input id='search' type='search' placeholder='상품을 검색해보세요!' />
       </div>
       <ul>
@@ -28,12 +28,13 @@ const Header = () => {
 const HeaderStyle = styled.section`
   display: flex;
   justify-content: space-between;
-  padding: 22px 0;
   align-items: center;
+  padding: 22px 0;
   div {
-    height: 38px;
     display: flex;
     column-gap: 30px;
+    align-items: center;
+
     input {
       min-width: 400px;
     }
