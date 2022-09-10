@@ -3,32 +3,28 @@ import styled from 'styled-components';
 interface Props {
   header: any;
   content: any;
-  footer: any;
 }
 
 const Container = styled.div`
   display: grid;
   grid-template-rows: repeat(3, auto);
   justify-content: center;
-  text-align: center;
+  align-items: center;
 `;
 
 const Header = styled.header`
-  margin: 180px 0 70px;
+  margin: 140px auto 70px;
 `;
 
-const Content = styled.section``;
-
-const Footer = styled.footer`
-  bottom: 0;
+const Content = styled.section`
+  margin: 0 auto;
 `;
 
-const LoginTemplate = ({ header, content, footer }: Props) => {
+const LoginTemplate = ({ header, content }: Props) => {
   return (
     <Container>
       <Header>{header}</Header>
       <Content>{content}</Content>
-      <Footer>{footer}</Footer>
     </Container>
   );
 };
