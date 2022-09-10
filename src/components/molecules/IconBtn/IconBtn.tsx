@@ -26,6 +26,7 @@ const ButtonStyle = styled.button`
     font-size: 12px;
     font-weight: 400;
     margin-top: 4px;
+    word-break: keep-all;
   }
 `;
 export default IconBtn;
