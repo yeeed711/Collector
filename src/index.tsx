@@ -4,13 +4,12 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import reset from 'styled-reset';
 import App from './App';
 import theme from './theme';
-import './font/font.css';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
     font-size: 10px;
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+   
   }
   * {
     box-sizing: border-box;
@@ -38,6 +37,8 @@ export const GlobalStyle = createGlobalStyle`
   .hide {
     display: none;
   }
+
+  
 `;
 
 const root = ReactDOM.createRoot(
