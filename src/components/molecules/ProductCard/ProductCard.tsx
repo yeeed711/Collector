@@ -20,15 +20,31 @@ const ProductName = styled.span`
   line-height: 22px;
 `;
 
-const ProductCard = () => {
+interface ProductsResponse {
+  post: {
+    image: string;
+    price: number;
+    product_id: number;
+    product_info: string;
+    product_name: string;
+    seller: number;
+    seller_store: string;
+    shipping_fee: number;
+    shipping_method: string;
+    stock: number;
+  };
+}
+
+const ProductCard = ({ post }: ProductsResponse) => {
+  console.log(post);
   return (
     // 상단에 무조건 부모태그인 ul이 존재해야함!
     <li>
-      <Img size='380px' borderRadius='10px' src={binky} border />
-      <ProductSource>우당탕탕 라이캣 실험실</ProductSource>
-      <ProductName>Hack Your Life 개발자 노트북 파우치</ProductName>
+      <Img size='380px' borderRadius='10px' src={post.image} border />
+      <ProductSource>{post.seller_store}</ProductSource>
+      <ProductName>{post.product_name}</ProductName>
       <PriceTextBox
-        text={29000}
+        text={post.price}
         fontSize='24px'
         textFontSize='16px'
         isTotal={false}
