@@ -20,8 +20,8 @@ const ImgStyle = styled.img<Props>`
     `}
 `;
 
-const Img = ({ size, borderRadius, ...props }: Props) => {
-  return <ImgStyle size={size} borderRadius={borderRadius} src={binky} />;
+const Img = ({ size, borderRadius, src }: Props) => {
+  return <ImgStyle size={size} borderRadius={borderRadius} src={src} />;
 };
 
 export default Img;
