@@ -5,8 +5,10 @@ import ProductCard from '../../molecules/ProductCard/ProductCard';
 
 const ProductCards = styled.ul`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 70px;
+  margin: 80px 0;
   img {
     margin-bottom: 16px;
   }

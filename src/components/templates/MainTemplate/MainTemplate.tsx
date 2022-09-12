@@ -8,17 +8,16 @@ interface Props {
 }
 
 const Container = styled.div`
-  /* min-width: 1280px; */
-  /* width: 100%; */
-  /* padding: 0 20%; */
   display: flex;
   justify-content: center;
   flex-direction: column;
 `;
 const Header = styled.header`
-  /* min-width: 1280px; */
+  /* padding: 0 10%; */
 `;
-const Content = styled.main``;
+const Content = styled.main`
+  padding: 0 10%;
+`;
 const Footer = styled.footer``;
 
 const MainTemplate = ({ header, content, footer }: Props) => {

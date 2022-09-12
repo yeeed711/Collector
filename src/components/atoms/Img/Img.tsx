@@ -13,6 +13,7 @@ const ImgStyle = styled.img<Props>`
   width: ${props => props.size};
   height: ${props => props.size};
   border-radius: ${props => props.borderRadius};
+  object-fit: cover;
   ${props =>
     props.border &&
     css`

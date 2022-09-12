@@ -36,7 +36,7 @@ interface ProductsResponse {
 }
 
 const ProductCard = ({ post }: ProductsResponse) => {
-  console.log(post);
+  //   console.log(post);
   return (
     // 상단에 무조건 부모태그인 ul이 존재해야함!
     <li>

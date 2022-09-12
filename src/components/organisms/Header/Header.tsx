@@ -29,7 +29,8 @@ const HeaderStyle = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 0;
+  padding: 22px 10%;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   div {
     display: flex;
     column-gap: 30px;
