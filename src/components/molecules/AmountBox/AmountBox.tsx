@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 interface Props {
   count: number;
-  onClick?: () => void;
+  increase?: () => void;
+  decrease?: () => void;
 }
 
 const AmountBoxStyle = styled.div`
@@ -31,14 +32,14 @@ const AmountBoxStyle = styled.div`
   }
 `;
 
-const AmountBox = ({ count = 1, onClick }: Props) => {
+const AmountBox = ({ count = 1, increase, decrease }: Props) => {
   return (
     <AmountBoxStyle>
-      <button onClick={onClick}>
+      <button onClick={decrease}>
         <img src={minus} alt='수량 감소 버튼' />
       </button>
       <div>{count}</div>
-      <button onClick={onClick}>
+      <button onClick={increase}>
         <img src={plus} alt='수량 증가 버튼' />
       </button>
     </AmountBoxStyle>
