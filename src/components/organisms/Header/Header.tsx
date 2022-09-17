@@ -5,12 +5,15 @@ import IconBtn from '../../molecules/IconBtn/IconBtn';
 import cart from '../../../assets/icon-shopping-cart.svg';
 import user from '../../../assets/icon-user.svg';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <HeaderStyle>
       <div>
-        <Logo width='124px' height='38px' alt='호두샵 서브 로고' />
+        <Link to='/'>
+          <Logo width='124px' height='38px' alt='호두샵 서브 로고' />
+        </Link>
         <Input id='search' type='search' placeholder='상품을 검색해보세요!' />
       </div>
       <ul>
