@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 import Input from '../../atoms/Input/Input';
 import Label from '../../atoms/Label/Label';
+import React from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 interface Props {
   htmlFor: string;
   children: string;
   id: string;
-  type: 'text' | 'checkbox';
+  type: 'text' | 'checkbox' | 'password';
   placeholder?: string;
   maxLength?: number;
   margin?: string;
   className?: string;
   message?: string;
+  register?: UseFormRegisterReturn;
 }
 
 const InputBox = ({
@@ -25,12 +28,17 @@ const InputBox = ({
   return (
     <>
       <Label htmlFor={htmlFor} children={children} className={className} />
-      <Input id={id} type={type} className={className} {...props} />
+      <Input
+        id={id}
+        type={type}
+        className={className}
+        {...props}
+        {...props.register}
+      />
       <Message className={className}>{message}</Message>
     </>
   );
 };
-
 const Message = styled.p`
   margin: 10px 0;
   color: ${props => props.theme.color.primary};

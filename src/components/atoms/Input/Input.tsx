@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { UseFormRegisterReturn } from 'react-hook-form';
+import { forwardRef } from 'react';
+
 export interface InputProps {
   id?: string;
   type: 'text' | 'password' | 'checkbox' | 'search';
@@ -10,11 +13,12 @@ export interface InputProps {
   margin?: string;
   className?: string;
   onInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  register?: UseFormRegisterReturn;
 }
 
-const Input = ({ id, type, ...props }: InputProps) => {
-  return <StyledInput id={id} type={type} {...props}></StyledInput>;
-};
+const Input = forwardRef(({ id, type, ...props }: InputProps) => {
+  return <StyledInput id={id} type={type} {...props.register}></StyledInput>;
+});
 
 const StyledInput = styled.input<InputProps>`
   width: 100%;
