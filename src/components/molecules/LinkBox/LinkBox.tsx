@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.ul`
@@ -21,7 +22,7 @@ const LinkBox = () => {
   return (
     <Container>
       <li>
-        <a>회원가입</a>
+        <Link to='/join'>회원가입</Link>
       </li>
       <li>
         <a>비밀번호 찾기</a>
