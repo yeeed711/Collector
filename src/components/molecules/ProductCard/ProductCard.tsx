@@ -3,6 +3,7 @@ import Img from '../../atoms/Img/Img';
 import binky from '../../../assets/img.png';
 import PriceTextBox from '../PriceTextBox/PriceTextBox';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ProductSource = styled.span`
   display: block;
@@ -40,15 +41,17 @@ const ProductCard = ({ post }: ProductsResponse) => {
   return (
     // 상단에 무조건 부모태그인 ul이 존재해야함!
     <li>
-      <Img size='380px' borderRadius='10px' src={post.image} border />
-      <ProductSource>{post.seller_store}</ProductSource>
-      <ProductName>{post.product_name}</ProductName>
-      <PriceTextBox
-        text={post.price}
-        fontSize='24px'
-        textFontSize='16px'
-        isTotal={false}
-      />
+      <Link to={`/product/${post.product_id}`}>
+        <Img size='380px' borderRadius='10px' src={post.image} border />
+        <ProductSource>{post.seller_store}</ProductSource>
+        <ProductName>{post.product_name}</ProductName>
+        <PriceTextBox
+          text={post.price}
+          fontSize='24px'
+          textFontSize='16px'
+          isTotal={false}
+        />
+      </Link>
     </li>
   );
 };
