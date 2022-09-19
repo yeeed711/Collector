@@ -15,7 +15,7 @@ const ProductCards = styled.ul`
 `;
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<any[]>([]);
   const ProductListGet = async () => {
     try {
       const res = await axios.get('https://openmarket.weniv.co.kr/products/', {
@@ -36,7 +36,7 @@ const ProductList = () => {
   return (
     <ProductCards>
       {products.map(product => (
-        <ProductCard post={product} />
+        <ProductCard key={product.product_id} post={product} />
       ))}
     </ProductCards>
   );
