@@ -64,6 +64,9 @@ export const StyledButton = styled.button<ButtonProps>`
       background-color: ${props => props.theme.color.error};
     }
   }
+  &:hover {
+    border-color: #21bf48;
+  }
 `;
 
 export default Button;

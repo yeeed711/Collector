@@ -21,6 +21,11 @@ const ButtonStyle = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
+  &:hover {
+    span {
+      color: #21bf48;
+    }
+  }
   span {
     color: #767676;
     font-size: 12px;
