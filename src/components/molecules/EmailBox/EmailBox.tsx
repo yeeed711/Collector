@@ -7,9 +7,9 @@ const EmailBox = () => {
     <Container>
       <Label htmlFor='email' children='이메일' />
       <div>
-        <Input id='email' type='text' />
+        <Input id='email1' type='text' />
         <span>@</span>
-        <Input id='email' type='text' />
+        <Input id='email2' type='text' />
       </div>
     </Container>
   );

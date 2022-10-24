@@ -8,9 +8,9 @@ const PhoneNumBox = () => {
     <Container>
       <Label htmlFor='phone' children='휴대폰번호' />
       <div>
-        <Input id='phone' type='text' />
-        <Input id='phone' type='text' />
-        <Input id='phone' type='text' />
+        <Input id='phone1' type='text' />
+        <Input id='phone2' type='text' />
+        <Input id='phone3' type='text' />
       </div>
     </Container>
   );

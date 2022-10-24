@@ -6,7 +6,7 @@ interface Props {
   text?: number;
   fontSize?: string;
   textFontSize?: string;
-  isTotal: boolean;
+  isTotal?: boolean;
 }
 
 const PriceText = styled.div`

@@ -6,6 +6,7 @@ import CheckTextBox from '../../molecules/CheckTextBox/CheckTextBox';
 import InputBtn from '../../molecules/InputBtn/InputBtn';
 import EmailBox from '../../molecules/EmailBox/EmailBox';
 import PhoneNumBox from '../../molecules/PhoneNumBox/PhoneNumBox';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 interface Props {
   selected?: string | Fn;
@@ -69,8 +70,24 @@ const CheckContainer = styled.div`
 const JoinForm = () => {
   const [userType, setUserType] = useState('BUYER');
 
+  interface IUserData {
+    userId: string;
+    name: string;
+    password: string;
+    phone: string;
+    email: string;
+  }
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IUserData>({
+    mode: 'onChange',
+  });
+  const onSubmit: SubmitHandler<IUserData> = data => console.log(data);
   return (
-    <FormContainer selected={userType}>
+    <FormContainer selected={userType} onSubmit={handleSubmit(onSubmit)}>
       <UserTypeContainer>
         <button onClick={() => setUserType('BUYER')}>구매회원가입</button>
         <button onClick={() => setUserType('SELLER')}>판매회원가입</button>
@@ -82,21 +99,25 @@ const JoinForm = () => {
           children='아이디'
           border='1px solid #C4C4C4'
           className=''
-          message='멋진 아이디네요 :)'
+          // message='멋진 아이디네요 :)'
           label='중복확인'
         />
         <InputBox
+          register={register('password', {
+            required: '비밀번호를 입력해주세요!!',
+          })}
           htmlFor='password'
           children='비밀번호'
           id='password'
-          type='text'
+          type='password'
           placeholder=''
           margin='10px 0 0 0'
         />
+        {errors?.password && <p>{errors.password.message}</p>}
         <InputBox
           htmlFor='password'
           children='비밀번호 재확인'
-          id='password'
+          id='repassword'
           type='text'
           placeholder=''
           margin='10px 0 0 0'

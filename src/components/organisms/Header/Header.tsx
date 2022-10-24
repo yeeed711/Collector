@@ -21,7 +21,9 @@ const Header = () => {
           <IconBtn imgSrc={cart} imgAlt='장바구니 아이콘' text='장바구니' />
         </li>
         <li>
-          <IconBtn imgSrc={user} imgAlt='마이페이지 아이콘' text='마이페이지' />
+          <Link to='/login'>
+            <IconBtn imgSrc={user} imgAlt='마이페이지 아이콘' text='로그인' />
+          </Link>
         </li>
       </ul>
     </HeaderStyle>

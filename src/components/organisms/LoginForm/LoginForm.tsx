@@ -80,6 +80,7 @@ const LoginForm = () => {
           <button onClick={() => setUserType('SELLER')}>판매회원 로그인</button>
         </UserTypeContainer>
         <LoginStyle>
+          {/* LoginStyle = Form */}
           <Label htmlFor='userId' children='아이디' className='ir' />
           <Input
             id='userId'
