@@ -7,6 +7,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<LoginPages />} />
+        <Route path='/login' element={<LoginPages />} />
         <Route path='/join' element={<JoinPage />} />
       </Routes>
     </BrowserRouter>

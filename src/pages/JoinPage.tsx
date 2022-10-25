@@ -7,7 +7,7 @@ import checkOff from '../assets/check-box.svg';
 import { useForm } from 'react-hook-form';
 import {
   axiosUserNameCheck,
-  axiosGetSellerSignUp,
+  axiosPostSellerSignUp,
 } from '../components/api/user';
 
 export interface IForm {
@@ -41,11 +41,9 @@ const JoinPage = () => {
       phone_number: data.phone_number,
       name: data.name,
     };
-    console.log(userData);
-    axiosGetSellerSignUp(userData).then(value => {
+    axiosPostSellerSignUp(userData).then(value => {
       if (value?.status === 201) {
         navigate('/login');
-        localStorage.setItem('userType', value.data);
       } else {
         alert('휴대폰 번호를 확인해주세요!');
       }

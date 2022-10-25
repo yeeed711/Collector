@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 
 interface IInput {
   id?: string;
   type: 'text' | 'password' | 'email' | 'checkbox';
   placeholder: string;
+  register?: UseFormRegisterReturn;
 }
 
-const Input = ({ id, type, placeholder }: IInput) => {
-  return <InputStyle type={type} placeholder={placeholder} id={id} />;
-};
+const Input = forwardRef(({ id, type, placeholder, ...props }: IInput) => {
+  return (
+    <InputStyle
+      type={type}
+      placeholder={placeholder}
+      id={id}
+      {...props.register}
+    />
+  );
+});
 
 export default Input;
 
