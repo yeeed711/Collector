@@ -34,7 +34,7 @@ const LoginPages = () => {
   };
   return (
     <Container>
-      <Logo />
+      <Logo width='238px' height='74px' />
       <LoginWrapper>
         <span>구매회원 로그인</span>
         <span>판매회원 로그인</span>
