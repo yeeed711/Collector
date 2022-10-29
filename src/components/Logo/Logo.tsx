@@ -1,14 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
 import logoImg from '../../assets/Logo-hodu.png';
 
-const Logo = () => {
-  return <LogoStyle src={logoImg} alt='호두마켓 로고' />;
+interface ILogo {
+  width: string;
+  height: string;
+}
+
+const Logo = ({ width, height }: ILogo) => {
+  return (
+    <img src={logoImg} alt='호두마켓 로고' width={width} height={height} />
+  );
 };
 
 export default Logo;
-
-const LogoStyle = styled.img`
-  width: 238px;
-  height: 74px;
-`;

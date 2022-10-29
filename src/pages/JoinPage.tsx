@@ -59,7 +59,7 @@ const JoinPage = () => {
 
   return (
     <Container>
-      <Logo />
+      <Logo width='238px' height='74px' />
       <JoinWrapper>
         <span>구매회원 회원가입</span>
         <span>판매회원 회원가입</span>
